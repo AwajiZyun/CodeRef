@@ -1,0 +1,7 @@
+# gitignore for VC++ projects
+
+*/.vs
+*/Debug
+*/Release
+*/*/Debug
+*/*/Release
