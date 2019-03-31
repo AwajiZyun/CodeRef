@@ -29,7 +29,7 @@ public:
 
 // Implementation
 protected:
-	DECLARE_MESSAGE_MAP()
+
 };
 
 CAboutDlg::CAboutDlg() : CDialogEx(IDD_ABOUTBOX)
@@ -73,6 +73,18 @@ BEGIN_MESSAGE_MAP(CGdiPaintDlg, CDialogEx)
     ON_COMMAND(ID_SHAPE_LINE, &CGdiPaintDlg::OnShapeLine)
     ON_COMMAND(ID_SHAPE_RECTANGLE, &CGdiPaintDlg::OnShapeRectangle)
     ON_COMMAND(ID_SHAPE_ELIPSE, &CGdiPaintDlg::OnShapeElipse)
+    ON_COMMAND(ID_SIZE_1, &CGdiPaintDlg::OnSize1)
+    ON_COMMAND(ID_SIZE_2, &CGdiPaintDlg::OnSize2)
+    ON_COMMAND(ID_SIZE_3, &CGdiPaintDlg::OnSize3)
+    ON_COMMAND(ID_SIZE_4, &CGdiPaintDlg::OnSize4)
+    ON_COMMAND(ID_SIZE_5, &CGdiPaintDlg::OnSize5)
+    ON_COMMAND(ID_STYLE_SOLID, &CGdiPaintDlg::OnStyleSolid)
+    ON_COMMAND(ID_STYLE_DASH, &CGdiPaintDlg::OnStyleDash)
+    ON_COMMAND(ID_STYLE_DASHDOT, &CGdiPaintDlg::OnStyleDashdot)
+    ON_COMMAND(ID_STYLE_DOT, &CGdiPaintDlg::OnStyleDot)
+    ON_COMMAND(ID_COLOR_RED, &CGdiPaintDlg::OnColorRed)
+    ON_COMMAND(ID_COLOR_GREEN, &CGdiPaintDlg::OnColorGreen)
+    ON_COMMAND(ID_COLOR_BLUE, &CGdiPaintDlg::OnColorBlue)
 END_MESSAGE_MAP()
 
 
@@ -246,7 +258,18 @@ BOOL CGdiPaintDlg::OnEraseBkgnd(CDC* pDC)
 
 void CGdiPaintDlg::OnLButtonDown(UINT nFlags, CPoint point)
 {
-    // TODO: Add your message handler code here and/or call default
+    m_bDrawing = TRUE;
+    if (m_bPropertyChanged) {
+        m_bPropertyChanged = FALSE;
+        m_pOldPen = m_memDC.SelectObject(&m_pen);
+    }
+    if (0 == m_nCurMode) {
+        POINT point;
+        GetCursorPos(&point);
+        m_memDC.MoveTo(point);
+        m_memDC.LineTo(point);
+    }
+    
 
     CDialogEx::OnLButtonDown(nFlags, point);
 }
@@ -254,7 +277,7 @@ void CGdiPaintDlg::OnLButtonDown(UINT nFlags, CPoint point)
 
 void CGdiPaintDlg::OnLButtonUp(UINT nFlags, CPoint point)
 {
-    // TODO: Add your message handler code here and/or call default
+    m_bDrawing = FALSE;
 
     CDialogEx::OnLButtonUp(nFlags, point);
 }
@@ -262,7 +285,11 @@ void CGdiPaintDlg::OnLButtonUp(UINT nFlags, CPoint point)
 
 void CGdiPaintDlg::OnMouseMove(UINT nFlags, CPoint point)
 {
-    // TODO: Add your message handler code here and/or call default
+    if (0 == m_nCurMode && m_bDrawing) {
+        m_memDC.MoveTo(point);
+        m_memDC.LineTo(point);
+        Invalidate();
+    }
 
     CDialogEx::OnMouseMove(nFlags, point);
 }
@@ -289,4 +316,112 @@ void CGdiPaintDlg::OnShapeRectangle()
 void CGdiPaintDlg::OnShapeElipse()
 {
     // TODO: Add your command handler code here
+}
+
+
+void CGdiPaintDlg::OnSize1()
+{
+    m_bPropertyChanged = TRUE;
+    m_penStyle.width = 1;
+    m_pen.DeleteObject();
+    m_pen.CreatePen(m_penStyle.style, m_penStyle.width, m_penStyle.color);
+}
+
+
+void CGdiPaintDlg::OnSize2()
+{
+    m_bPropertyChanged = TRUE;
+    m_penStyle.width = 2;
+    m_pen.DeleteObject();
+    m_pen.CreatePen(m_penStyle.style, m_penStyle.width, m_penStyle.color);
+}
+
+
+void CGdiPaintDlg::OnSize3()
+{
+    m_bPropertyChanged = TRUE;
+    m_penStyle.width = 3;
+    m_pen.DeleteObject();
+    m_pen.CreatePen(m_penStyle.style, m_penStyle.width, m_penStyle.color);
+}
+
+
+void CGdiPaintDlg::OnSize4()
+{
+    m_bPropertyChanged = TRUE;
+    m_penStyle.width = 4;
+    m_pen.DeleteObject();
+    m_pen.CreatePen(m_penStyle.style, m_penStyle.width, m_penStyle.color);
+}
+
+
+void CGdiPaintDlg::OnSize5()
+{
+    m_bPropertyChanged = TRUE;
+    m_penStyle.width = 5;
+    m_pen.DeleteObject();
+    m_pen.CreatePen(m_penStyle.style, m_penStyle.width, m_penStyle.color);
+}
+
+
+void CGdiPaintDlg::OnStyleSolid()
+{
+    m_bPropertyChanged = TRUE;
+    m_penStyle.style = PS_SOLID;
+    m_pen.DeleteObject();
+    m_pen.CreatePen(m_penStyle.style, m_penStyle.width, m_penStyle.color);
+}
+
+
+void CGdiPaintDlg::OnStyleDash()
+{
+    m_bPropertyChanged = TRUE;
+    m_penStyle.style = PS_DASH;
+    m_pen.DeleteObject();
+    m_pen.CreatePen(m_penStyle.style, m_penStyle.width, m_penStyle.color);
+}
+
+
+void CGdiPaintDlg::OnStyleDashdot()
+{
+    m_bPropertyChanged = TRUE;
+    m_penStyle.style = PS_DASHDOT;
+    m_pen.DeleteObject();
+    m_pen.CreatePen(m_penStyle.style, m_penStyle.width, m_penStyle.color);
+}
+
+
+void CGdiPaintDlg::OnStyleDot()
+{
+    m_bPropertyChanged = TRUE;
+    m_penStyle.style = PS_DOT;
+    m_pen.DeleteObject();
+    m_pen.CreatePen(m_penStyle.style, m_penStyle.width, m_penStyle.color);
+}
+
+
+void CGdiPaintDlg::OnColorRed()
+{
+    m_bPropertyChanged = TRUE;
+    m_penStyle.color = RGB(255, 0, 0);
+    m_pen.DeleteObject();
+    m_pen.CreatePen(m_penStyle.style, m_penStyle.width, m_penStyle.color);
+}
+
+
+void CGdiPaintDlg::OnColorGreen()
+{
+    m_bPropertyChanged = TRUE;
+    m_penStyle.color = RGB(0, 255, 0);
+    m_pen.DeleteObject();
+    m_pen.CreatePen(m_penStyle.style, m_penStyle.width, m_penStyle.color);
+}
+
+
+void CGdiPaintDlg::OnColorBlue()
+{
+    m_bPropertyChanged = TRUE;
+    m_penStyle.color = RGB(0, 0, 255);
+    m_pen.DeleteObject();
+    m_pen.CreatePen(m_penStyle.style, m_penStyle.width, m_penStyle.color);
 }
