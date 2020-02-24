@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/OCRdemo">
+        <file>Resources/hk.jpg</file>
+        <file>Resources/hkb.jpg</file>
+        <file>Resources/ID.jpg</file>
+        <file>Resources/passport.jpg</file>
+        <file>Resources/tw.jpg</file>
+        <file>Resources/bankcard.jpg</file>
+        <file>Resources/driverLic.jpg</file>
+        <file>Resources/driverLic2.jpg</file>
+        <file>Resources/idcardback.jpg</file>
+        <file>icon.ico</file>
+    </qresource>
+</RCC>

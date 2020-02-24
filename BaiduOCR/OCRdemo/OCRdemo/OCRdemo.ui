@@ -1,0 +1,1070 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OCRdemoClass</class>
+ <widget class="QMainWindow" name="OCRdemoClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1015</width>
+    <height>559</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>OCRdemo</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="OCRdemo.qrc">
+    <normaloff>:/OCRdemo/icon.ico</normaloff>:/OCRdemo/icon.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMaximumSize</enum>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>选择证件类型进行识别</string>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetDefaultConstraint</enum>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QToolButton" name="toolButtonIDCard">
+               <property name="maximumSize">
+                <size>
+                 <width>75</width>
+                 <height>75</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>身份证</string>
+               </property>
+               <property name="icon">
+                <iconset resource="OCRdemo.qrc">
+                 <normaloff>:/OCRdemo/Resources/ID.jpg</normaloff>:/OCRdemo/Resources/ID.jpg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>64</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonTextUnderIcon</enum>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButtonIDCardBack">
+               <property name="maximumSize">
+                <size>
+                 <width>75</width>
+                 <height>75</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>国徽面</string>
+               </property>
+               <property name="icon">
+                <iconset resource="OCRdemo.qrc">
+                 <normaloff>:/OCRdemo/Resources/idcardback.jpg</normaloff>:/OCRdemo/Resources/idcardback.jpg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>64</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonTextUnderIcon</enum>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButtonBankCard">
+               <property name="maximumSize">
+                <size>
+                 <width>75</width>
+                 <height>75</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>银行卡</string>
+               </property>
+               <property name="icon">
+                <iconset resource="OCRdemo.qrc">
+                 <normaloff>:/OCRdemo/Resources/bankcard.jpg</normaloff>:/OCRdemo/Resources/bankcard.jpg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>64</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonTextUnderIcon</enum>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButtonHKcard">
+               <property name="maximumSize">
+                <size>
+                 <width>75</width>
+                 <height>75</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>港澳通行证</string>
+               </property>
+               <property name="icon">
+                <iconset resource="OCRdemo.qrc">
+                 <normaloff>:/OCRdemo/Resources/hk.jpg</normaloff>:/OCRdemo/Resources/hk.jpg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>64</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonTextUnderIcon</enum>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButtonTWcard">
+               <property name="maximumSize">
+                <size>
+                 <width>75</width>
+                 <height>75</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>台湾通行证</string>
+               </property>
+               <property name="icon">
+                <iconset resource="OCRdemo.qrc">
+                 <normaloff>:/OCRdemo/Resources/tw.jpg</normaloff>:/OCRdemo/Resources/tw.jpg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>64</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonTextUnderIcon</enum>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QToolButton" name="toolButtonResident">
+               <property name="maximumSize">
+                <size>
+                 <width>75</width>
+                 <height>75</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>户口本</string>
+               </property>
+               <property name="icon">
+                <iconset resource="OCRdemo.qrc">
+                 <normaloff>:/OCRdemo/Resources/hkb.jpg</normaloff>:/OCRdemo/Resources/hkb.jpg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>64</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonTextUnderIcon</enum>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButtonPassport">
+               <property name="maximumSize">
+                <size>
+                 <width>75</width>
+                 <height>75</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>护照</string>
+               </property>
+               <property name="icon">
+                <iconset resource="OCRdemo.qrc">
+                 <normaloff>:/OCRdemo/Resources/passport.jpg</normaloff>:/OCRdemo/Resources/passport.jpg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>64</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="popupMode">
+                <enum>QToolButton::DelayedPopup</enum>
+               </property>
+               <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonTextUnderIcon</enum>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+               <property name="arrowType">
+                <enum>Qt::NoArrow</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButtonDriverLic">
+               <property name="maximumSize">
+                <size>
+                 <width>75</width>
+                 <height>75</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>驾驶证</string>
+               </property>
+               <property name="icon">
+                <iconset resource="OCRdemo.qrc">
+                 <normaloff>:/OCRdemo/Resources/driverLic.jpg</normaloff>:/OCRdemo/Resources/driverLic.jpg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>64</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonTextUnderIcon</enum>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButtonDriverLic2">
+               <property name="maximumSize">
+                <size>
+                 <width>75</width>
+                 <height>75</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>行驶证</string>
+               </property>
+               <property name="icon">
+                <iconset resource="OCRdemo.qrc">
+                 <normaloff>:/OCRdemo/Resources/driverLic2.jpg</normaloff>:/OCRdemo/Resources/driverLic2.jpg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>64</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonTextUnderIcon</enum>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QStackedWidget" name="stackedWidget">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page">
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <layout class="QFormLayout" name="formLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>姓名</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="lineEditIDname"/>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>民族</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="lineEditIDnation"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>性别</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="lineEditIDsex"/>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_5">
+                <property name="text">
+                 <string>出生</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="label_7">
+                <property name="text">
+                 <string>住址</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="label_6">
+                <property name="text">
+                 <string>公民身份号码</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLineEdit" name="lineEditIDbirth"/>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLineEdit" name="lineEditIDaddr"/>
+              </item>
+              <item row="5" column="1">
+               <widget class="QLineEdit" name="lineEditIDnumber"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_2">
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <layout class="QFormLayout" name="formLayout_2">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_8">
+                <property name="text">
+                 <string>签发机关</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="lineEditIDangency"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_9">
+                <property name="text">
+                 <string>签发日期</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="lineEditIDstartDate"/>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_10">
+                <property name="text">
+                 <string>失效日期</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="lineEditIDendDate"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_3">
+           <layout class="QFormLayout" name="formLayout_4">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>银行卡号</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="lineEditBankNum"/>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_11">
+              <property name="text">
+               <string>有效期</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEditBankValid"/>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>银行卡类型</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="lineEditBankType"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_13">
+              <property name="text">
+               <string>银行名</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="lineEditBankName"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_4">
+           <layout class="QFormLayout" name="formLayout_5">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_14">
+              <property name="text">
+               <string>姓名</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="lineEditHKname"/>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_15">
+              <property name="text">
+               <string>性别</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEditHKsex"/>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>出生</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_17">
+              <property name="text">
+               <string>卡号</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_18">
+              <property name="text">
+               <string>英文名</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_19">
+              <property name="text">
+               <string>有效期</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_20">
+              <property name="text">
+               <string>签发地</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="lineEditHKbirth"/>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="lineEditHKnum"/>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="lineEditHKengName"/>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="lineEditHKAddress"/>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="lineEditHKvalid"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_5">
+           <layout class="QFormLayout" name="formLayout_6">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_21">
+              <property name="text">
+               <string>国家码</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_22">
+              <property name="text">
+               <string>姓名</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QLabel" name="label_23">
+              <property name="text">
+               <string>出生地</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_24">
+              <property name="text">
+               <string>性别</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_25">
+              <property name="text">
+               <string>生日</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_26">
+              <property name="text">
+               <string>签发地</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QLabel" name="label_27">
+              <property name="text">
+               <string>姓名拼音</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_28">
+              <property name="text">
+               <string>有效期至</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="label_29">
+              <property name="text">
+               <string>签发日期</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_30">
+              <property name="text">
+               <string>号码</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="lineEditPassportNation"/>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEditPassportName"/>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="lineEditPassportSex"/>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="lineEditPassportBirth"/>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="lineEditPassportAddress"/>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="lineEditPassportValid"/>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="lineEditPassportNum"/>
+            </item>
+            <item row="7" column="1">
+             <widget class="QLineEdit" name="lineEditPassportStartDate"/>
+            </item>
+            <item row="8" column="1">
+             <widget class="QLineEdit" name="lineEditPassportNamePinYin"/>
+            </item>
+            <item row="9" column="1">
+             <widget class="QLineEdit" name="lineEditPassportBirthPlace"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_6">
+           <layout class="QFormLayout" name="formLayout_7">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_31">
+              <property name="text">
+               <string>出生地</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_32">
+              <property name="text">
+               <string>性别</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_33">
+              <property name="text">
+               <string>生日</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_34">
+              <property name="text">
+               <string>身份证号</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_35">
+              <property name="text">
+               <string>关系</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_36">
+              <property name="text">
+               <string>姓名</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_37">
+              <property name="text">
+               <string>民族</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="lineEditHouseHoldBirthPlace"/>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEditHouseHoldBirthday"/>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="lineEditHouseHoldNum"/>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="lineEditHouseHoldName"/>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="lineEditHouseHoldNation"/>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="lineEditHouseHoldRelation"/>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="lineEditHouseHoldSex"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_7">
+           <layout class="QFormLayout" name="formLayout_8">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_38">
+              <property name="text">
+               <string>证号</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_39">
+              <property name="text">
+               <string>有效期限</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_40">
+              <property name="text">
+               <string>准驾车型</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QLabel" name="label_41">
+              <property name="text">
+               <string>初次领证日期</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_42">
+              <property name="text">
+               <string>有效日期起始</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_43">
+              <property name="text">
+               <string>住址</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_44">
+              <property name="text">
+               <string>姓名</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="label_45">
+              <property name="text">
+               <string>出生日期</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QLabel" name="label_46">
+              <property name="text">
+               <string>性别</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_47">
+              <property name="text">
+               <string>国籍</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="lineEditDriverNum"/>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEditDriverValid"/>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="lineEditDriverType"/>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="lineEditDriverStartDate"/>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="lineEditDriverAddr"/>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="lineEditDriverName"/>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="lineEditDriverNation"/>
+            </item>
+            <item row="7" column="1">
+             <widget class="QLineEdit" name="lineEditDriverBirth"/>
+            </item>
+            <item row="8" column="1">
+             <widget class="QLineEdit" name="lineEditDriverSex"/>
+            </item>
+            <item row="9" column="1">
+             <widget class="QLineEdit" name="lineEditDriverFirstDate"/>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_8">
+           <layout class="QFormLayout" name="formLayout_9">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_48">
+              <property name="text">
+               <string>品牌型号</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_49">
+              <property name="text">
+               <string>发证日期</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QLabel" name="label_50">
+              <property name="text">
+               <string>车辆类型</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_51">
+              <property name="text">
+               <string>使用性质</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_52">
+              <property name="text">
+               <string>发动机号码</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_53">
+              <property name="text">
+               <string>号牌号码</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_54">
+              <property name="text">
+               <string>所有人</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="label_55">
+              <property name="text">
+               <string>注册日期</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QLabel" name="label_56">
+              <property name="text">
+               <string>车辆识别代号</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_57">
+              <property name="text">
+               <string>住址</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="lineEditDriver2Type"/>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEditDriver2StartDate"/>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="lineEditDriver2Purpose"/>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="lineEditDriver2Engine"/>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="lineEditDriver2num"/>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="lineEditDriver2Owner"/>
+            </item>
+            <item row="7" column="1">
+             <widget class="QLineEdit" name="lineEditDriver2RegisterDate"/>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="lineEditDriver2Addr"/>
+            </item>
+            <item row="8" column="1">
+             <widget class="QLineEdit" name="lineEditDriver2CarNum"/>
+            </item>
+            <item row="9" column="1">
+             <widget class="QLineEdit" name="lineEditDriverCarType"/>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutRight">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetMaximumSize</enum>
+          </property>
+          <item>
+           <widget class="QPushButton" name="pushButtonLoad">
+            <property name="text">
+             <string>选择图片</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEditPath"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelImg">
+          <property name="frameShape">
+           <enum>QFrame::WinPanel</enum>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QComboBox" name="comboBoxCam">
+            <item>
+             <property name="text">
+              <string>相机1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>相机2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>相机3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>相机4</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonCam">
+            <property name="text">
+             <string>打开相机</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1015</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="OCRdemo.qrc"/>
+ </resources>
+ <connections/>
+</ui>

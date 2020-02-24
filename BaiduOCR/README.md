@@ -1,0 +1,1 @@
+Baidu OCR API demo with Qt

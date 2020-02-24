@@ -1,0 +1,12 @@
+#pragma once
+enum {
+    CARD_TYPE_ID = 1,
+    CARD_TYPE_ID_BACK = 2,
+    CARD_TYPE_BANK = 3,
+    CARD_TYPE_HK = 4,
+    CARD_TYPE_TW = 5,
+    CARD_TYPE_HOUSEHOLD = 6,
+    CARD_TYPE_PASSPORT = 7,
+    CARD_TYPE_DRIVERLIC = 8,
+    CARD_TYPE_DRIVERLIC2 = 9
+}; 
